@@ -4,7 +4,7 @@ workflows:
     name: Build Android APK
     environment:
       vars:
-        JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+        JAVA_HOME: /usr/lib/jvm/java-23
         ANDROID_NDK: 21.4.7075529 # If needed, add Android NDK as a variable
     scripts:
       - name: Install dependencies
