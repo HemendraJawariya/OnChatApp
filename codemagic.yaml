@@ -1,1 +1,19 @@
 
+workflows:
+  android-apk:
+    name: Build Android APK
+    environment:
+      vars:
+        JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+        ANDROID_NDK: 21.4.7075529 # If needed, add Android NDK as a variable
+    scripts:
+      - name: Install dependencies
+        script: npm install
+      - name: Build APK
+        script: ./gradlew assembleRelease
+    artifacts:
+      - android/app/build/outputs/apk/release/*.apk
+    publishing:
+      email:
+        recipients:
+          - "your-email@example.com"
